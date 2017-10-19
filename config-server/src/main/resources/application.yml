@@ -6,6 +6,10 @@ spring:
       server:
         git:
           uri: https://github.com/nishuonishuoshuo/springCloud/
-          searchPaths: respo
+          searchPaths: tree/master/config-server/src/main/resources/properties
+      label: master
+          #公开仓库不需要密码
+          #  username: xx
+          #  password: xx
 server:
   port: 1115
