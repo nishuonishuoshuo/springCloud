@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9527/eureka/
+server:
+  port: 1114
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+        path: /api-a/**
+        serviceId: service-ribbon
+    api-b:
+        path: /api-b/**
+        serviceId: service-feign
+  host:
+    connect-timeout-millis: 99999
+    socket-timeout-millis: 990000
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 990000
